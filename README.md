@@ -1,1 +1,1 @@
-This site is based on [Jekyll](http://jekyllrb.com/) and is all about me.
+My Website.

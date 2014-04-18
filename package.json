@@ -1,0 +1,24 @@
+{
+  "name": "erickryski.com",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Eric Kryski's website",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ekryski/ekryski.github.com.git"
+  },
+  "author": "Eric Kryski",
+  "license": "Proprietary",
+  "bugs": {
+    "url": "https://github.com/ekryski/ekryski.github.com/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-concat": "~2.2.0",
+    "gulp": "~3.6.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-imagemin": "~0.2.0",
+    "gulp-less": "~1.2.3"
+  }
+}

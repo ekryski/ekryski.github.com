@@ -1,0 +1,315 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/buttons";
+@import "common/animations";
+@import "common/base";
+@import "font/breezingly-embedded";
+
+*,
+*:after,
+*::before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 100;
+  min-height: 100%;
+  color: @white;
+}
+
+h1, h2 {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+}
+
+a {
+  color: darken(@white, 5%);
+  text-decoration: none;
+  .transition(all, 0.3s);
+
+  &:hover {
+    color: @blue;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.circle {
+  display: block;
+  border: 4px solid darken(@white, 10%);
+  width: 200px;
+  height: 200px;
+  .rounded(100px);
+  .drop-shadow(0, 2px, 4px, 0.5);
+  .box-sizing;
+
+  &.centered {
+    margin: 0 auto;
+  }
+}
+
+section {
+  padding: 3em 0;
+}
+
+.player-modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: fadeout(@black, 20%);
+  z-index: 1000;
+  .transition(all, 0.3s);
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -195px;
+    margin-left: -320px;
+    max-width: 100%;
+  }
+}
+
+section.hero {
+  background: url('/build/img/graffiti.jpg') no-repeat center center;
+  background-size: cover;
+
+  .bio {
+    margin: 0 auto;
+  }
+}
+
+section.social {
+  padding-bottom: 0;
+  .row {
+    padding: 0;
+  }
+
+  a {
+    color: @white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken(@white, 5%);
+      text-decoration: none;
+      color: @white;
+    }
+  }
+
+  h1.title {
+    color: darken(@grey, 20%);
+    margin-bottom: 1.5em;
+  }
+
+  h1 {
+    .font-size(64);
+    .line-height(72);
+    margin: 0.6em 0 0 0;
+  }
+
+  h3 {
+    margin: 0 0.3em 0; 
+  }
+
+  h5 {
+    margin: 4em 0 0 0;
+  }
+
+  .left {
+    padding: 1.2em 0.8em;
+  }
+
+  .twitter {
+    background: @twitter;
+
+    &:hover {
+      color: @twitter;
+    }
+  }
+
+  .linkedin {
+    background: @linkedin;
+
+    &:hover {
+      color: @linkedin;
+    }
+  }
+
+  .github {
+    background: @github;
+
+    &:hover {
+      color: @github;
+    }
+  }
+
+  .medium {
+    background: @medium;
+
+    &:hover {
+      color: @medium;
+    }
+
+    span {
+      font-family: 'Charter', Georgia, serif;
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      margin-left: .2em;
+    }
+  }
+
+  .dribbble {
+    background: @dribbble;
+
+    &:hover {
+      color: @dribbble;
+    }
+  }
+
+  .meetup {
+    background: @meetup;
+
+    &:hover {
+      color: @meetup;
+    }
+
+    i {
+      margin-left: -0.3em;
+    }
+  }
+}
+
+section.projects {
+  background: @white;
+  
+  h1.title {
+    color: @blue;
+  }
+
+  .fa-heart {
+    color: @meetup;
+  }
+}
+
+section.craftsmanship {
+  background: @blue;
+  
+  h1.title {
+    color: @white;
+  }
+}
+
+section.location {
+  position: relative;
+  background: @white;
+  padding: 0;
+
+  #map {
+    height: 40em;
+    width: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2em;
+    height: 100%;
+    width: 20em;
+    background: fadeout(@black, 20%);
+
+    h3 {
+      margin: 0;
+    }
+
+    a.play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2em;
+      margin-top: -1em;
+      .transition(all, 0);
+
+      .fa-play {
+        padding: 0.3em 0.2em 0.3em 0.3em;
+        border: 2px solid @white;
+        .rounded(1em);
+        .transition(all, 0.3s);
+      }
+
+      &:hover {
+        .fa-play {
+          border: 2px solid @blue;
+        }
+      }
+    }
+
+    .video-image {
+      position: relative;
+      background: url('/build/img/video.jpg');
+      .rounded(5px);
+      width: 100%;
+      height: 40%;
+      margin: 2em 0;
+    }
+
+    .inline-list {
+      margin-top: 1em;
+    }
+  }
+
+}
+
+section.dreams {
+  background: @green;
+  
+  // ul {
+  //   max-height: 400px;
+  //   overflow-y: auto;
+  // }
+
+  li {
+    margin: 0.3em 0;
+    .font-size(18);
+
+    &.done {
+      color: darken(@white, 10%);
+      text-decoration: line-through;
+    }
+  }
+}
+
+section.quote {
+  position: relative;
+  background: darken(@grey, 25%);
+  color: darken(@white, 5%);
+
+  .copyright {
+    margin: 4em 0 0 0;
+  }
+}

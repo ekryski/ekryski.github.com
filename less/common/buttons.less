@@ -1,0 +1,63 @@
+.btn {
+  border-width: 2px;
+  position: relative;
+}
+
+.btn-primary {
+  color: @blue;
+  background: transparent;
+  border: 2px solid @blue;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: @blue;
+    border: 2px solid @blue;
+  }
+
+  &.disabled, 
+  &[disabled], 
+  &.disabled:hover, 
+  &[disabled]:hover, 
+  &.disabled:focus, 
+  &[disabled]:focus, 
+  &.disabled:active, 
+  &[disabled]:active, 
+  &.disabled.active, 
+  &[disabled].active {
+    background: lighten(@grey, 50%);
+    border: 2px solid @grey;
+    color: @grey;
+  }
+}
+
+.btn-primary.no-hover {
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active
+  &.active {
+    color: @blue;
+    background: transparent;
+    border: 2px solid @blue;
+  }
+}
+
+.btn-default.no-hover {
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active
+  &.active {
+    color: @grey;
+    background-color: @white;
+    border-color: #CCC;
+  }
+}
+
+.btn-group > .btn:hover {
+  z-index: inherit;
+}
