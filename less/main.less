@@ -96,6 +96,22 @@ a {
   }
 }
 
+.photo {
+  display: block;
+  border: 4px solid darken(@white, 10%);
+  .drop-shadow(0, 2px, 4px, 0.5);
+  .box-sizing;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+}
+
 section {
   padding: 3em 0;
 }
@@ -531,6 +547,33 @@ section.craftsmanship {
   
   h1.title {
     color: @white;
+  }
+
+  .photo {
+    @media (min-width: 1200px) {
+      height: 250px;
+      width: 300px;
+    }
+
+    @media (min-width: 980px) and (max-width: 1199px) {
+      height: 200px;
+      width: 300px;
+    }
+
+    @media (min-width: 768px) and (max-width: 979px) {
+      height: 150px;
+      width: 200px;
+    }
+
+    @media (max-width: 767px) {
+      height: 100px;
+      width: 150px;
+    }
+
+    @media (max-width: 480px) {
+      height: 90px;
+      width: 120px;
+    }
   }
 }
 

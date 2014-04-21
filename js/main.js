@@ -61,14 +61,13 @@ var Site = {
 
   checkWaypoints: function(){
     var position = window.pageYOffset;
-    var offset = 300;
 
-    if ( !this.seenProjects && (position > $('section.projects').offset().top - offset) ) {
+    if ( !this.seenProjects && (position > $('section.projects').offset().top + 200) ) {
       this.seenProjects = true;
       this.highlightHexagon();
     }
 
-    if ( !this.seenLocation && (position > $('section.location').offset().top - offset) ) {
+    if ( !this.seenLocation && (position > $('section.location').offset().top) ) {
       this.seenLocation = true;
       this.loadYoutube();
     }
@@ -96,7 +95,9 @@ var Site = {
       'top-left'
     ];
 
-    this.$triangles.removeClass('expanded');
+    setTimeout(function() {
+      self.$triangles.removeClass('expanded');
+    }, 1000);
 
     setTimeout(function() {
       self.$triangles.each(function(index, triangle){
@@ -109,7 +110,7 @@ var Site = {
           self.$triangles.removeClass('active');
         }, 200 * (self.$triangles.length + 1));
       });
-    }, 300);
+    }, 1500);
   },
 
   loadYoutube: function(){

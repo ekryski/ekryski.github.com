@@ -3568,6 +3568,24 @@ a:hover {
   -moz-border-radius: 100px;
   border-radius: 100px;
 }
+.photo {
+  display: block;
+  border: 4px solid #e6e6e6;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+.photo.centered {
+  margin: 0 auto;
+}
 section {
   padding: 3em 0;
 }
@@ -3951,6 +3969,36 @@ section.craftsmanship {
 }
 section.craftsmanship h1.title {
   color: #ffffff;
+}
+@media (min-width: 1200px) {
+  section.craftsmanship .photo {
+    height: 250px;
+    width: 300px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  section.craftsmanship .photo {
+    height: 200px;
+    width: 300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  section.craftsmanship .photo {
+    height: 150px;
+    width: 200px;
+  }
+}
+@media (max-width: 767px) {
+  section.craftsmanship .photo {
+    height: 100px;
+    width: 150px;
+  }
+}
+@media (max-width: 480px) {
+  section.craftsmanship .photo {
+    height: 90px;
+    width: 120px;
+  }
 }
 section.location {
   position: relative;
