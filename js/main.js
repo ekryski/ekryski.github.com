@@ -56,6 +56,7 @@ var Site = {
     $('.triangle a').mouseleave(this.toggleExpansion);
 
     this.startCounting();
+    this.insertMap();
   },
 
   checkWaypoints: function(){
@@ -70,7 +71,6 @@ var Site = {
     if ( !this.seenLocation && (position > $('section.location').offset().top - offset) ) {
       this.seenLocation = true;
       this.loadYoutube();
-      this.insertMap();
     }
   },
 
