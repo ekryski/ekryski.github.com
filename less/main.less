@@ -27,6 +27,12 @@ h1, h2 {
   font-family: 'Arial Black', 'Arial', sans-serif;
 }
 
+h1.title {
+  .font-size(48);
+  .line-height(56);
+  margin: 0.6em 0 1.5em 0;
+}
+
 a {
   color: darken(@white, 5%);
   text-decoration: none;
@@ -34,6 +40,25 @@ a {
 
   &:hover {
     color: @blue;
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.4em 0.6em;
+  border: 2px solid @white;
+  font-weight: 300;
+  .rounded(5px);
+
+  &:hover {
+    color: @blue;
+    border: 2px solid @blue;
+  }
+
+  @media (max-width: 740px) {
+    &.no-mobile {
+      display: none;
+    }
   }
 }
 
@@ -45,14 +70,29 @@ a {
 .circle {
   display: block;
   border: 4px solid darken(@white, 10%);
-  width: 200px;
-  height: 200px;
-  .rounded(100px);
   .drop-shadow(0, 2px, 4px, 0.5);
   .box-sizing;
 
   &.centered {
     margin: 0 auto;
+  }
+
+  &.small {
+    width: 80px;
+    height: 80px;
+    .rounded(40px);
+  }
+
+  &.medium {
+    width: 140px;
+    height: 140px;
+    .rounded(70px);
+  }
+
+  &.large {
+    width: 200px;
+    height: 200px;
+    .rounded(100px);
   }
 }
 
@@ -65,7 +105,7 @@ section {
   height: 100%;
   width: 100%;
   background: fadeout(@black, 20%);
-  z-index: 1000;
+  z-index: 2000;
   .transition(all, 0.3s);
 
   .close {
@@ -81,12 +121,29 @@ section {
     margin-top: -195px;
     margin-left: -320px;
     max-width: 100%;
+
+    @media (max-width: 768px) {
+      height: 400px;
+      width: 100%;
+      margin-top: -300px;
+      margin-left: 0;
+      left: 0; 
+    }
+
+    @media (max-width: 480px) {
+      height: 300px;
+      margin-top: -150px;
+    }
   }
 }
 
 section.hero {
   background: url('/build/img/graffiti.jpg') no-repeat center center;
   background-size: cover;
+
+  .circle {
+    margin-bottom: 0.8em;
+  }
 
   .bio {
     margin: 0 auto;
@@ -113,13 +170,6 @@ section.social {
 
   h1.title {
     color: darken(@grey, 20%);
-    margin-bottom: 1.5em;
-  }
-
-  h1 {
-    .font-size(64);
-    .line-height(72);
-    margin: 0.6em 0 0 0;
   }
 
   h3 {
@@ -175,7 +225,6 @@ section.social {
       width: 1em;
       margin-right: .2em;
       text-align: center;
-      /* opacity: .8; */
       font-variant: normal;
       text-transform: none;
       line-height: 1em;
@@ -202,6 +251,12 @@ section.social {
       margin-left: -0.3em;
     }
   }
+
+  @media (max-width: 480px) {
+    i, span {
+      .font-size(48);
+    }
+  }
 }
 
 section.projects {
@@ -213,6 +268,261 @@ section.projects {
 
   .fa-heart {
     color: @meetup;
+  }
+
+  .hexagon {
+    width: 420px;
+    margin: 2.0em auto;
+  }
+
+  .triangle {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    .transition(all, 0.2s);
+    .translate3d(0, 0, 0);
+    -moz-transform: scale(0.999);
+
+    a {
+      position: absolute;
+      height: @triangle;
+      width: @triangle;
+      left: -@triangle/2;
+
+      span {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        font-weight: 300;
+        color: @white;
+      }
+
+      @media (max-width: 480px) {
+        height: @triangle-small;
+        width: @triangle-small;
+        left: -@triangle-small/2;
+      }
+    }
+
+    &.top-left {
+      border-width: 0 @triangle 173.2px @triangle;
+      border-color: transparent transparent darken(@white, 70%) transparent;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: transparent transparent @green transparent;
+      }
+
+      &.expanded {
+        margin: -10px 20px 0 -20px;
+      }
+
+      a {
+        top: 70px;
+      }
+    }
+
+    &.top {
+      margin: 0 auto;
+      border-width: 173.2px @triangle 0 @triangle;
+      border-color: darken(@white, 10%) transparent transparent transparent;
+      margin-left: -@triangle;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: @yellow transparent transparent transparent;
+      }
+
+      &.expanded {
+        margin: -20px 0 0 -@triangle;
+      }
+
+      a {
+        top: -170px;
+      }
+    }
+
+    &.top-right {
+      border-width: 0 @triangle 173.2px @triangle;
+      border-color: transparent transparent darken(@white, 22%) transparent;
+      margin-left: -@triangle;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: transparent transparent @orange transparent;
+      }
+
+      &.expanded {
+        margin: -10px 0 10px -80px;
+      }
+
+      a {
+        top: 70px;
+      }
+    }
+
+    &.bottom-left {
+      border-width: 173.2px @triangle 0 @triangle;
+      border-color: darken(@white, 58%) transparent transparent transparent;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: @blue transparent transparent transparent;
+      }
+
+      &.expanded {
+        margin: 10px 20px -10px -20px;
+      }
+
+      a {
+        top: -170px;
+      }
+    }
+
+    &.bottom {
+      border-width: 0 @triangle 173.2px @triangle;
+      border-color: transparent transparent darken(@white, 46%) transparent;
+      margin-left: -@triangle;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: transparent transparent @purple transparent;
+      }
+
+      &.expanded {
+        margin: 20px 0 -20px -@triangle;
+      }
+
+      a {
+        top: 70px;
+      }
+    }
+
+    &.bottom-right {
+      border-width: 173.2px @triangle 0 @triangle;
+      border-color: darken(@white, 34%) transparent transparent transparent;
+      margin-left: -@triangle;
+
+      &.active,
+      :active,
+      :focus {
+        border-color: @red transparent transparent transparent;
+      }
+
+      &.expanded {
+        margin: 10px 0 -10px -80px;
+      }
+
+      a {
+        top: -170px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 0;
+    
+    .row {
+      padding-bottom: 0;
+    }
+
+    .hexagon {
+      width: 100%;
+      margin: 2em 0 0 0;
+    }
+
+    .triangle {
+      &.top-left,
+      &.top,
+      &.top-right,
+      &.bottom-left,
+      &.bottom,
+      &.bottom-right {
+        border: none;
+        width: 33.33333%;
+        height: 120px;
+        margin: 0;
+
+        &.expanded {
+          margin: 0;
+        }
+
+        a {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      &.top-left {
+        background: darken(@white, 70%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @green;
+        }
+      }
+      
+      &.top {
+        background: darken(@white, 10%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @yellow;
+        }
+      }
+
+      &.top-right {
+        background: darken(@white, 22%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @orange;
+        }
+      }
+
+      &.bottom-left {
+        background: darken(@white, 58%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @blue;
+        }
+      }
+
+      &.bottom {
+        background: darken(@white, 46%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @purple;
+        }
+      }
+
+      &.bottom-right {
+        background: darken(@white, 34%);
+
+        &.active,
+        :active,
+        :focus {
+          background: @red;
+        }
+      }      
+    }
   }
 }
 
@@ -230,7 +540,7 @@ section.location {
   padding: 0;
 
   #map {
-    height: 40em;
+    height: 50em;
     width: 100%;
   }
 
@@ -242,9 +552,14 @@ section.location {
     height: 100%;
     width: 20em;
     background: fadeout(@black, 20%);
+    z-index: 1050;
 
     h3 {
       margin: 0;
+    }
+
+    a.btn {
+      margin: 1.0em 0 3.0em 0;
     }
 
     a.play {
@@ -274,7 +589,7 @@ section.location {
       background: url('/build/img/video.jpg');
       .rounded(5px);
       width: 100%;
-      height: 40%;
+      height: 30%;
       margin: 2em 0;
     }
 
@@ -287,11 +602,10 @@ section.location {
 
 section.dreams {
   background: @green;
-  
-  // ul {
-  //   max-height: 400px;
-  //   overflow-y: auto;
-  // }
+
+  h1.title {
+    margin: 0;
+  }
 
   li {
     margin: 0.3em 0;

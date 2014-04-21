@@ -23,7 +23,7 @@ gulp.task('less', function () {
 gulp.task('scripts', function() {
   // Minify and copy all JavaScript (except vendor scripts)
   return gulp.src(paths.scripts)
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest('build/js'));
 });

@@ -3493,6 +3493,13 @@ h1,
 h2 {
   font-family: 'Arial Black', 'Arial', sans-serif;
 }
+h1.title {
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 56px;
+  line-height: 3.5rem;
+  margin: 0.6em 0 1.5em 0;
+}
 a {
   color: #f2f2f2;
   text-decoration: none;
@@ -3504,6 +3511,24 @@ a {
 a:hover {
   color: #00bce4;
 }
+.btn {
+  display: block;
+  padding: 0.4em 0.6em;
+  border: 2px solid #ffffff;
+  font-weight: 300;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.btn:hover {
+  color: #00bce4;
+  border: 2px solid #00bce4;
+}
+@media (max-width: 740px) {
+  .btn.no-mobile {
+    display: none;
+  }
+}
 .hidden {
   visibility: hidden;
   display: none;
@@ -3511,11 +3536,6 @@ a:hover {
 .circle {
   display: block;
   border: 4px solid #e6e6e6;
-  width: 200px;
-  height: 200px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -3527,6 +3547,27 @@ a:hover {
 .circle.centered {
   margin: 0 auto;
 }
+.circle.small {
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+.circle.medium {
+  width: 140px;
+  height: 140px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  border-radius: 70px;
+}
+.circle.large {
+  width: 200px;
+  height: 200px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
 section {
   padding: 3em 0;
 }
@@ -3535,7 +3576,7 @@ section {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
+  z-index: 2000;
   -webkit-transition: -webkit-all 0.3s ease-out;
   -moz-transition: -moz-all 0.3s ease-out;
   -o-transition: -o-all 0.3s ease-out;
@@ -3554,9 +3595,27 @@ section {
   margin-left: -320px;
   max-width: 100%;
 }
+@media (max-width: 768px) {
+  .player-modal iframe {
+    height: 400px;
+    width: 100%;
+    margin-top: -300px;
+    margin-left: 0;
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .player-modal iframe {
+    height: 300px;
+    margin-top: -150px;
+  }
+}
 section.hero {
   background: url('/build/img/graffiti.jpg') no-repeat center center;
   background-size: cover;
+}
+section.hero .circle {
+  margin-bottom: 0.8em;
 }
 section.hero .bio {
   margin: 0 auto;
@@ -3579,14 +3638,6 @@ section.social a:active {
 }
 section.social h1.title {
   color: #333333;
-  margin-bottom: 1.5em;
-}
-section.social h1 {
-  font-size: 64px;
-  font-size: 4rem;
-  line-height: 72px;
-  line-height: 4.5rem;
-  margin: 0.6em 0 0 0;
 }
 section.social h3 {
   margin: 0 0.3em 0;
@@ -3631,7 +3682,6 @@ section.social .medium span {
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  /* opacity: .8; */
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
@@ -3652,6 +3702,13 @@ section.social .meetup:hover {
 section.social .meetup i {
   margin-left: -0.3em;
 }
+@media (max-width: 480px) {
+  section.social i,
+  section.social span {
+    font-size: 48px;
+    font-size: 3rem;
+  }
+}
 section.projects {
   background: #ffffff;
 }
@@ -3660,6 +3717,234 @@ section.projects h1.title {
 }
 section.projects .fa-heart {
   color: #e25667;
+}
+section.projects .hexagon {
+  width: 420px;
+  margin: 2.0em auto;
+}
+section.projects .triangle {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  -webkit-transition: -webkit-all 0.2s ease-out;
+  -moz-transition: -moz-all 0.2s ease-out;
+  -o-transition: -o-all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate(0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate(0, 0);
+  -moz-transform: scale(0.999);
+}
+section.projects .triangle a {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: -50px;
+}
+section.projects .triangle a span {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+  color: #ffffff;
+}
+@media (max-width: 480px) {
+  section.projects .triangle a {
+    height: 50px;
+    width: 50px;
+    left: -25px;
+  }
+}
+section.projects .triangle.top-left {
+  border-width: 0 100px 173.2px 100px;
+  border-color: transparent transparent #4d4d4d transparent;
+}
+section.projects .triangle.top-left.active,
+section.projects .triangle.top-left :active,
+section.projects .triangle.top-left :focus {
+  border-color: transparent transparent #16bc9c transparent;
+}
+section.projects .triangle.top-left.expanded {
+  margin: -10px 20px 0 -20px;
+}
+section.projects .triangle.top-left a {
+  top: 70px;
+}
+section.projects .triangle.top {
+  margin: 0 auto;
+  border-width: 173.2px 100px 0 100px;
+  border-color: #e6e6e6 transparent transparent transparent;
+  margin-left: -100px;
+}
+section.projects .triangle.top.active,
+section.projects .triangle.top :active,
+section.projects .triangle.top :focus {
+  border-color: #f0f06a transparent transparent transparent;
+}
+section.projects .triangle.top.expanded {
+  margin: -20px 0 0 -100px;
+}
+section.projects .triangle.top a {
+  top: -170px;
+}
+section.projects .triangle.top-right {
+  border-width: 0 100px 173.2px 100px;
+  border-color: transparent transparent #c7c7c7 transparent;
+  margin-left: -100px;
+}
+section.projects .triangle.top-right.active,
+section.projects .triangle.top-right :active,
+section.projects .triangle.top-right :focus {
+  border-color: transparent transparent #ffca44 transparent;
+}
+section.projects .triangle.top-right.expanded {
+  margin: -10px 0 10px -80px;
+}
+section.projects .triangle.top-right a {
+  top: 70px;
+}
+section.projects .triangle.bottom-left {
+  border-width: 173.2px 100px 0 100px;
+  border-color: #6b6b6b transparent transparent transparent;
+}
+section.projects .triangle.bottom-left.active,
+section.projects .triangle.bottom-left :active,
+section.projects .triangle.bottom-left :focus {
+  border-color: #00bce4 transparent transparent transparent;
+}
+section.projects .triangle.bottom-left.expanded {
+  margin: 10px 20px -10px -20px;
+}
+section.projects .triangle.bottom-left a {
+  top: -170px;
+}
+section.projects .triangle.bottom {
+  border-width: 0 100px 173.2px 100px;
+  border-color: transparent transparent #8a8a8a transparent;
+  margin-left: -100px;
+}
+section.projects .triangle.bottom.active,
+section.projects .triangle.bottom :active,
+section.projects .triangle.bottom :focus {
+  border-color: transparent transparent #ba7bdf transparent;
+}
+section.projects .triangle.bottom.expanded {
+  margin: 20px 0 -20px -100px;
+}
+section.projects .triangle.bottom a {
+  top: 70px;
+}
+section.projects .triangle.bottom-right {
+  border-width: 173.2px 100px 0 100px;
+  border-color: #a8a8a8 transparent transparent transparent;
+  margin-left: -100px;
+}
+section.projects .triangle.bottom-right.active,
+section.projects .triangle.bottom-right :active,
+section.projects .triangle.bottom-right :focus {
+  border-color: #e25667 transparent transparent transparent;
+}
+section.projects .triangle.bottom-right.expanded {
+  margin: 10px 0 -10px -80px;
+}
+section.projects .triangle.bottom-right a {
+  top: -170px;
+}
+@media (max-width: 480px) {
+  section.projects {
+    padding-bottom: 0;
+  }
+  section.projects .row {
+    padding-bottom: 0;
+  }
+  section.projects .hexagon {
+    width: 100%;
+    margin: 2em 0 0 0;
+  }
+  section.projects .triangle.top-left,
+  section.projects .triangle.top,
+  section.projects .triangle.top-right,
+  section.projects .triangle.bottom-left,
+  section.projects .triangle.bottom,
+  section.projects .triangle.bottom-right {
+    border: none;
+    width: 33.33333%;
+    height: 120px;
+    margin: 0;
+  }
+  section.projects .triangle.top-left.expanded,
+  section.projects .triangle.top.expanded,
+  section.projects .triangle.top-right.expanded,
+  section.projects .triangle.bottom-left.expanded,
+  section.projects .triangle.bottom.expanded,
+  section.projects .triangle.bottom-right.expanded {
+    margin: 0;
+  }
+  section.projects .triangle.top-left a,
+  section.projects .triangle.top a,
+  section.projects .triangle.top-right a,
+  section.projects .triangle.bottom-left a,
+  section.projects .triangle.bottom a,
+  section.projects .triangle.bottom-right a {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  section.projects .triangle.top-left {
+    background: #4d4d4d;
+  }
+  section.projects .triangle.top-left.active,
+  section.projects .triangle.top-left :active,
+  section.projects .triangle.top-left :focus {
+    background: #16bc9c;
+  }
+  section.projects .triangle.top {
+    background: #e6e6e6;
+  }
+  section.projects .triangle.top.active,
+  section.projects .triangle.top :active,
+  section.projects .triangle.top :focus {
+    background: #f0f06a;
+  }
+  section.projects .triangle.top-right {
+    background: #c7c7c7;
+  }
+  section.projects .triangle.top-right.active,
+  section.projects .triangle.top-right :active,
+  section.projects .triangle.top-right :focus {
+    background: #ffca44;
+  }
+  section.projects .triangle.bottom-left {
+    background: #6b6b6b;
+  }
+  section.projects .triangle.bottom-left.active,
+  section.projects .triangle.bottom-left :active,
+  section.projects .triangle.bottom-left :focus {
+    background: #00bce4;
+  }
+  section.projects .triangle.bottom {
+    background: #8a8a8a;
+  }
+  section.projects .triangle.bottom.active,
+  section.projects .triangle.bottom :active,
+  section.projects .triangle.bottom :focus {
+    background: #ba7bdf;
+  }
+  section.projects .triangle.bottom-right {
+    background: #a8a8a8;
+  }
+  section.projects .triangle.bottom-right.active,
+  section.projects .triangle.bottom-right :active,
+  section.projects .triangle.bottom-right :focus {
+    background: #e25667;
+  }
 }
 section.craftsmanship {
   background: #00bce4;
@@ -3673,7 +3958,7 @@ section.location {
   padding: 0;
 }
 section.location #map {
-  height: 40em;
+  height: 50em;
   width: 100%;
 }
 section.location .overlay {
@@ -3684,9 +3969,13 @@ section.location .overlay {
   height: 100%;
   width: 20em;
   background: rgba(0, 0, 0, 0.8);
+  z-index: 1050;
 }
 section.location .overlay h3 {
   margin: 0;
+}
+section.location .overlay a.btn {
+  margin: 1.0em 0 3.0em 0;
 }
 section.location .overlay a.play {
   position: absolute;
@@ -3720,7 +4009,7 @@ section.location .overlay .video-image {
   -moz-border-radius: 5px;
   border-radius: 5px;
   width: 100%;
-  height: 40%;
+  height: 30%;
   margin: 2em 0;
 }
 section.location .overlay .inline-list {
@@ -3728,6 +4017,9 @@ section.location .overlay .inline-list {
 }
 section.dreams {
   background: #16bc9c;
+}
+section.dreams h1.title {
+  margin: 0;
 }
 section.dreams li {
   margin: 0.3em 0;
