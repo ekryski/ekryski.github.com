@@ -130,25 +130,28 @@ var Site = {
 
     this.$modal.removeClass('hidden');
 
-    if (this.player) {
-      this.player.playVideo();
-      return;
-    }
+    this.$modal.find('#player').html('<iframe class="video" width="560" height="315" src="//www.youtube.com/embed/ThFCg0tBDck?rel=0&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>');
 
-    this.player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: 'L82_jHs8FgA',
-      events: {
-        'onReady': $.proxy(this.onPlayerReady, this),
-      }
-    });
+    // if (this.player) {
+    //   this.player.playVideo();
+    //   return;
+    // }
+
+    // this.player = new YT.Player('player', {
+    //   height: '390',
+    //   width: '640',
+    //   videoId: 'L82_jHs8FgA',
+    //   events: {
+    //     'onReady': $.proxy(this.onPlayerReady, this),
+    //   }
+    // });
   },
 
   stopVideo: function(event){
     event.preventDefault();
 
-    this.player.stopVideo();
+    // this.player.stopVideo();
+    this.$modal.find('#player').empty();
     this.$modal.addClass('hidden');
   },
 

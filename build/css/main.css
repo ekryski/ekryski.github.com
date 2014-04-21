@@ -3605,16 +3605,22 @@ section {
   top: 20px;
   right: 20px;
 }
-.player-modal iframe {
+.player-modal .video {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -195px;
-  margin-left: -320px;
   max-width: 100%;
 }
-@media (max-width: 768px) {
-  .player-modal iframe {
+@media (min-width: 768px) {
+  .player-modal .video {
+    height: 400px;
+    width: 600px;
+    margin-top: -300px;
+    margin-left: -300px;
+  }
+}
+@media (max-width: 767px) {
+  .player-modal .video {
     height: 400px;
     width: 100%;
     margin-top: -300px;
@@ -3623,7 +3629,7 @@ section {
   }
 }
 @media (max-width: 480px) {
-  .player-modal iframe {
+  .player-modal .video {
     height: 300px;
     margin-top: -150px;
   }

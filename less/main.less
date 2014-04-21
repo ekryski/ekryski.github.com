@@ -130,15 +130,20 @@ section {
     right: 20px;
   }
 
-  iframe {
+  .video {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -195px;
-    margin-left: -320px;
     max-width: 100%;
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
+      height: 400px;
+      width: 600px;
+      margin-top: -300px;
+      margin-left: -300px;
+    }
+
+    @media (max-width: 767px) {
       height: 400px;
       width: 100%;
       margin-top: -300px;
