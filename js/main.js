@@ -62,7 +62,7 @@ var Site = {
   checkWaypoints: function(){
     var position = window.pageYOffset;
 
-    if ( !this.seenProjects && (position > $('section.projects').offset().top + 200) ) {
+    if ( !this.seenProjects && (position > $('section.projects').offset().top - 100) ) {
       this.seenProjects = true;
       this.highlightHexagon();
     }
@@ -97,7 +97,7 @@ var Site = {
 
     setTimeout(function() {
       self.$triangles.removeClass('expanded');
-    }, 1000);
+    }, 500);
 
     setTimeout(function() {
       self.$triangles.each(function(index, triangle){
@@ -110,7 +110,7 @@ var Site = {
           self.$triangles.removeClass('active');
         }, 200 * (self.$triangles.length + 1));
       });
-    }, 1500);
+    }, 800);
   },
 
   loadYoutube: function(){
