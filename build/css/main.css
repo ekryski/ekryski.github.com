@@ -4014,6 +4014,7 @@ section.location {
 section.location #map {
   height: 50em;
   width: 100%;
+  background: #f2f2f2;
 }
 section.location .overlay {
   position: absolute;
