@@ -16,7 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp-concat": "~2.2.0",
-    "gulp": "~3.6.0",
+    "gulp": "~3.6.1",
     "gulp-uglify": "~0.2.1",
     "gulp-imagemin": "~0.2.0",
     "gulp-less": "~1.2.3"
